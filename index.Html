@@ -21,7 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Landing.css" />
+<link rel="stylesheet" href="Landing.css?v=2">
+
     
 </head>
 
@@ -58,25 +59,26 @@
     
 
     <!-- Navbar Section -->
-<nav class="navbar navbar-expand-sm navbar-light bg-white shadow-lg sticky-top">
-    <div class="container d-flex align-items-center">
-        <a class="navbar-brand me-auto" href="#">
-            <img src="logo (1).png" alt="TechCybe Logo" class="img-fluid logo">
-        </a>
-        <div class="d-flex align-items-center   ">
-            <a href="https://techcybe.com/contact-us.html" class="btn btn-get-quote ps-5 pe-5 pt-2 pb-2 fw-bold text-light fs-5 me-3">Get a Quote</a>
-            <div class="call-us-container d-flex align-items-center ms-3 ">
-                <div class="icon-container d-flex align-items-center justify-content-center me-2">
-                    <i class="fas fa-phone"></i>
-                </div>
-                <div class="call-details">
-                    <h5 class="call-label mb-0">Call on us</h5>
-                    <p class="phone-number mb-0">+971 56 542 6856</p>
+    <nav class="navbar navbar-expand-sm navbar-light bg-white shadow-lg sticky-top">
+        <div class="container d-flex align-items-center">
+            <a class="navbar-brand me-auto" href="#">
+                <img src="logo (1).png" alt="TechCybe Logo" class="img-fluid logo">
+            </a>
+            <div class="d-flex align-items-center">
+                <a href="https://techcybe.com/contact-us.html" class="btn btn-get-quote ps-5 pe-5 pt-2 pb-2 fw-bold text-light fs-5 me-3">Get a Quote</a>
+                <div class="call-us-container d-flex align-items-center ms-3">
+                    <div class="icon-container d-flex align-items-center justify-content-center me-2">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="call-details">
+                        <h5 class="call-label mb-0">Call on us</h5>
+                        <p class="phone-number mb-0">+971 56 542 6856</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+    
 
     <!-- Floating Buttons -->
 <div class="floating-buttons">
@@ -105,15 +107,12 @@
     <!-- who we are -->
     <div>
         <div class="row p-5 mt-5 ">
-            <div class="col-sm-6 position-relative">
-                <img src="about-two-image1.jpg" alt="First Image" class="img-fluid first-image">
-                <img src="about-two-image2.png" alt="Second Image" class="img-fluid second-image">
-            </div>
+            
             <div class="col-sm-6 p-3">
                 <h5 style="color:#2a52b4;" class="fs-5 poppins-semibold">WHO WE ARE</h5>
-                <h2 class="fs-1 poppins-semibold mt-3">Ensuring Your Success Through Reliable IT Solutions</h2>
+                <h2 class="fs-1 poppins-semibold mt-3">Your Success, Powered by Reliable IT Solutions.</h2>
                 <p class="mt-4 poppins-light">Techcybe IT Solutions in UAE specializes in IT solutions and integrated service management, catering to small, medium, and complex enterprises. We redefine how organizations benefit from our services, contributing to enhanced productivity and offering exceptional value to our clients, helping their business thrive.</p>
-                <div class="row mt-5">
+                <div class="row mt-4 ">
                     <div class="col-sm-6">
                         <h5><span class="tick-icon"><i class="fas fa-check"></i></span>Technology Consultancy</h5>
                         <h5><span class="tick-icon"><i class="fas fa-check"></i></span>Maintenance And Support
@@ -123,16 +122,57 @@
                         <h5><span class="tick-icon"><i class="fas fa-check"></i></span>We Provide best services</h5>
                         <h5><span class="tick-icon"><i class="fas fa-check"></i></span>Requirements Gathering</h5>
                     </div>
-                </div><a href="https://techcybe.com/about-us.html"><button class="btn btn-get-quote ps-4 pe-4 pt-2 pb-2 fw-bold text-light fs-5 mt-4">About Us</button></a>
+                </div><a href="https://techcybe.com/about-us.html"><button class="btn btn-get-quote ps-4 pe-4 pt-2 pb-2 fw-bold text-light fs-5 mt-5">About Us</button></a>
              
             </div>
+            <div class="col-md-6 mt-3 px-1">
+                <h5 style="color:#2a52b4;" class="fs-5 ms-3 poppins-semibold" >GET IH TOUCH</h5>
+                <h2 class="fs-1 poppins-semibold ms-3 mt-3">Get a Quote</h2>
+                <form id="contact-form" class="footer-form">
+                    <input type="text" name="name" class="footer-input mb-4" placeholder="Name" required />
+                    <input type="tel" name="phone" class="footer-input mb-4" placeholder="Phone Number" required />
+                    <input type="email" name="email" class="footer-input mb-4" placeholder="Email Id" required />
+                    <textarea name="message" class="footer-input mb-4" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-get-quote border border-0 mt-2 w-100">Send Message</button>
+                  </form>
+                  
+                  <script>
+                  document.getElementById("contact-form").addEventListener("submit", async function (e) {
+          e.preventDefault(); // Prevent the form from submitting the traditional way
+        
+          const formData = new FormData(this); // Collect form data
+        
+          try {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbz--iGeCFrV26TmXwjmbG5N4XboHTdT5BDOk-msUu4ACbCcuq8uI63vy2_rNIH86SWp/exec", {
+              method: "POST",
+              body: formData, // Send form data to the Google Apps Script
+            });
+        
+            if (response.ok) {
+              // Success: Clear the form and show a message
+              alert("Message sent successfully!");
+              document.getElementById("contact-form").reset(); // Clear the form
+            } else {
+              // Show more detailed error message
+              const errorText = await response.text();
+              alert(`Error: ${response.status} - ${errorText}`);
+            }
+          } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Error submitting the form. Please try again.");
+          }
+        });
+        
+                  </script>
+                  
+              </div>
         </div>
     </div>
     <!-- Services -->
      <div class="mt-5">
     <h5 style="color:#2a52b4;" class="fs-5 ms-5 poppins-semibold">SERVICES WE'ARE OFFERING</h5>
     <h2 class="fs-1  mt-3 ms-5 poppins-semibold">Exclusive IT Services</h2>
-    <div class="row ms-3  mt-5 ">
+    <div class="row ms-1 d-flex justify-content-center  mt-5 ">
         <div class="col-lg-4 col-md-6 col-12 mb-4">
             <div class="flip-card shadow-lg " style="width:350px">
                 <div class="flip-card-inner">
@@ -448,62 +488,7 @@
     </div>
   </section>
   
-  <!--lets talk-->
-<div class="container py-2">
-    <div class="row justify-content-center align-items-center mb-5 mt-5">
-      <div class="col-md-6">
-        <h5 style="color:#2a52b4;margin-top: 30px;" class="fs-5 ms-3 poppins-semibold" >GET IH TOUCH</h5>
-        <h2 class="fs-1 poppins-semibold ms-3 ">Let's Talk</h2>
-        <h2 class="fw-normal fs-4 mt-3 ms-3">Got a project on your mind? Let's discuss the details.</h2>
-        <div class="contact-info mt-5 ms-3">
-          <h4 class="fw-normal fs-5">TechCybe IT Solutions LLC, Sharjah Media Free Zone, UAE</h4>
-          <h4 class="fw-normal fs-5">+971 56 542 6856</h4>
-          <h4 class="fw-normal fs-5">info@techcybe.com</h4>
-          <h4 class="fw-normal fs-5">sales@techcybe.com</h4>
-        </div>
-      </div>
-      <div class="col-md-6 mt-5">
-        <form id="contact-form" class="footer-form">
-            <input type="text" name="name" class="footer-input mb-4" placeholder="Name" required />
-            <input type="tel" name="phone" class="footer-input mb-4" placeholder="Phone Number" required />
-            <input type="email" name="email" class="footer-input mb-4" placeholder="Email Id" required />
-            <textarea name="message" class="footer-input mb-4" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn-get-quote border border-0 mt-3 w-100">Send Message</button>
-          </form>
-          
-          <script>
-          document.getElementById("contact-form").addEventListener("submit", async function (e) {
-  e.preventDefault(); // Prevent the form from submitting the traditional way
-
-  const formData = new FormData(this); // Collect form data
-
-  try {
-    const response = await fetch("https://script.google.com/macros/s/AKfycbz--iGeCFrV26TmXwjmbG5N4XboHTdT5BDOk-msUu4ACbCcuq8uI63vy2_rNIH86SWp/exec", {
-      method: "POST",
-      body: formData, // Send form data to the Google Apps Script
-    });
-
-    if (response.ok) {
-      // Success: Clear the form and show a message
-      alert("Message sent successfully!");
-      document.getElementById("contact-form").reset(); // Clear the form
-    } else {
-      // Show more detailed error message
-      const errorText = await response.text();
-      alert(`Error: ${response.status} - ${errorText}`);
-    }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    alert("Error submitting the form. Please try again.");
-  }
-});
-
-          </script>
-          
-      </div>
-    </div>
-  </div>
-  
+ 
  <!-- Get in touch -->
 
  <div class="row mx-lg-5 mx-3 border rounded-2 mt-5 pe-5 " style="background-color: #000000;">

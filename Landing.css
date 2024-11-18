@@ -1,4 +1,11 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 .logo{
 width: 250px;
 
@@ -21,16 +28,48 @@ width: 250px;
 }
 /* Sticky Navbar */
 .navbar.sticky-top {
-    position: -webkit-sticky; /* For Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 9999; /* Ensure the navbar stays on top of other elements */
+    z-index: 1050; /* Higher z-index to stay above other elements */
+    width: 100%; /* Ensure it spans the full width */
+    height: auto; /* Adjust height dynamically */
+    min-height: 60px; /* Set minimum height to ensure it stays fully visible */
+    display: flex; /* Ensure flexbox alignment */
+    align-items: center; /* Vertically center content in the navbar */
 }
 
 /* Optional shadow effect when scrolling */
 .navbar.sticky-top.shadow-lg {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Optional padding adjustments */
+.navbar .container {
+    padding: 0 15px; /* Adjust padding as needed */
+}
+
+/* Ensure the navbar logo and other content items have enough spacing */
+.navbar-brand {
+    padding: 10px 0;
+}
+
+.d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+/* Media query for mobile view - adjust navbar size */
+@media (max-width: 576px) {
+    .navbar.sticky-top {
+        min-height: 70px; /* Increase the height in mobile view if needed */
+    }
+
+    .navbar-brand img {
+        max-height: 40px; /* Adjust logo size for mobile */
+    }
+}
+
 
 /* General Styles for Floating Buttons */
 .floating-buttons {
@@ -95,6 +134,9 @@ width: 250px;
  }
     .location-info{
         display: none !important;
+    }
+    body{
+        overflow-x: hidden !important ; 
     }
 }
 
@@ -253,11 +295,44 @@ width: 250px;
     color: #555; /* Neutral text color */
   }
   
-  
-body{
-    overflow-x:hidden !important ;
-
+   body {
+    overflow-x: hidden !important;
 }
+/* For small devices (extra small and up) */
+@media (max-width: 576px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+/* For medium devices (small and up) */
+@media (min-width: 576px) and (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+/* For large devices (medium and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+/* For extra large devices (large and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
+/* For extra-extra-large devices (1200px and up) */
+@media (min-width: 1200px) {
+    body {
+        overflow-x: hidden !important;
+    }
+}
+
 /* Hover effect for changing color */
 .social-icons a:hover {
     border-color: #007bff; /* Change border color on hover */
@@ -351,6 +426,9 @@ body{
     .banner-container img {
         width: 100%; /* Ensure the image fits within the container */
         height: 300px!important; /* Ensure the image maintains container aspect ratio */
+    }
+    body{
+        overflow-x: hidden !important ;
     }
 }
 
@@ -494,9 +572,7 @@ line-height: 30px;
     margin-bottom: 10px;
 }
 /* Base style for the box */
-.box{
-    background-color: #2a52b4;
-}
+
 .box-hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
     border-radius: 10px;  /* Optional: Add rounded corners */
@@ -528,6 +604,12 @@ line-height: 30px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 576px) {
+    .box {
+        height: auto; /* Allow auto height for very small screens */
+        padding: 15px;
+    }
+}
 .footer{
     margin-top: -20px;
 }
