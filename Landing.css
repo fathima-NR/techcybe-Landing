@@ -1,9 +1,41 @@
-
-* {
+/* Reset margin and padding for body and html */
+html, body {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box !important; /* Ensure padding and borders do not cause overflow */
+}
+
+/* Prevent overflow and ensure no extra space */
+body {
+    overflow-x: hidden !important; /* Disable horizontal scroll */
+}
+
+/* General reset for all elements */
+*, *::before, *::after {
     box-sizing: border-box;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 576px) {
+    /* Ensure no extra margin on body */
+    body {
+        margin: 0;
+    }
+
+    /* If any elements have large margins or paddings, reset them */
+    .container, .row, .col {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensure no horizontal scroll */
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
 
 
 .logo{
@@ -295,9 +327,7 @@ width: 250px;
     color: #555; /* Neutral text color */
   }
   
-   body {
-    overflow-x: hidden !important;
-}
+
 /* For small devices (extra small and up) */
 @media (max-width: 576px) {
     body {
